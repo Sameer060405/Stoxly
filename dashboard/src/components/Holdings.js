@@ -1,9 +1,51 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+// import { holdings } from "../data/data"
+import axios from 'axios';
+import { VerticalGraph } from "./VerticalGraph";
 const Holdings = () => {
+
+//to connect with backend we need usestate and useeffect which connects backend and frontend and now the data will be fetched from the database
+
+  const [allHoldings, setAllHoldings] = useState([]);
+
+  useEffect(() => {
+  axios.get("http://localhost:3003/allHoldings").then((res) => {
+    console.log("Holdings API response:", res.data);
+    setAllHoldings(res.data);
+  });
+}, []);
+const labels = allHoldings.map((subArray)=> subArray["name"]);
+
+const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Stock Name',
+      data: allHoldings.map((Stock) => Stock.price),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+  ],
+
+}
+// export const data = {
+//   labels,
+//   datasets: [
+    // {
+    //   label: 'Dataset 1',
+    //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+    //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    // },
+//     {
+//       label: 'Dataset 2',
+//       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+//       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+//     },
+//   ],
+// };
+
   return (
     <>
-      <h3 className="title">Holdings (13)</h3>
+      <h3 className="title">Holdings ({allHoldings.length})</h3>
 
       <div className="order-table">
         <table>
@@ -17,6 +59,53 @@ const Holdings = () => {
             <th>Net chg.</th>
             <th>Day chg.</th>
           </tr>
+
+          {/* {allHoldings.map((stock,index) =>{
+            const curValue = stock.price * stock.qty;
+            const isProfit = curValue - stock.avg*stock.qty  >= 0.0;
+            const profClass = isProfit ? "Profit" : "loss" ;
+            const dayClass = stock.isLoss? "Loss" : "Profit";
+
+            return (
+              <tr key = {index}>
+              <td>{stock.name}</td>
+              <td>{stock.qty}</td>
+              <td>{stock.avg.toFixed(2)}</td>
+              <td>{stock.price.toFixed(2)}</td>
+              <td>{curValue.toFixed(2)}</td>
+              <td className={profClass}>
+                {(curValue - stock.avg * stock.qty).toFixed(2)}
+              </td>
+              <td className={profClass}>{stock.net}</td>
+              <td className={dayClass}>{stock.day}</td>
+              </tr>
+
+    
+
+            );
+          })} */}
+          {allHoldings.map((stock, index) => {
+            const curValue = (Number(stock.price) || 0) * (Number(stock.qty) || 0);
+            const isProfit = curValue - stock.avgCost * stock.qty >= 0.0;
+            const profClass = isProfit ? "profit" : "loss";
+            const dayClass = stock.isLoss ? "loss" : "profit";
+
+            return (
+              <tr key={index}>
+                <td>{stock.name}</td>
+                <td>{stock.qty}</td>
+                <td>{stock.avgCost.toFixed(2)}</td>
+                <td>{stock.price.toFixed(2)}</td>
+                <td>{curValue.toFixed(2)}</td>
+                <td className={profClass}>
+                  {(curValue - stock.avgCost * stock.qty).toFixed(2)}
+                </td>
+                <td className={profClass}>{stock.net}</td>
+                <td className={dayClass}>{stock.day}</td>
+              </tr>
+            );
+          })}
+
         </table>
       </div>
 
@@ -38,6 +127,7 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+      <VerticalGraph data = {data} />
     </>
   );
 };

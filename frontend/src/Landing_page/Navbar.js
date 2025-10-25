@@ -30,9 +30,7 @@ function Navbar() {
                                 <Link class="nav-link active" to="/support">Support</Link>
                             </li>
                             </ul>
-                           
-                               
-                           
+                            
                         </form>
                     </div>
                 </div>
