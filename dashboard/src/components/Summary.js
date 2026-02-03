@@ -1,10 +1,15 @@
 import React from "react";
+import { useBalance } from "./BalanceContext";
+import { useUser } from "./UserContext";
 
 const Summary = () => {
+  const { balance } = useBalance();
+  const { firstName } = useUser();
+
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi, {firstName}!</h6>
         <hr className="divider" />
       </div>
 
@@ -15,7 +20,7 @@ const Summary = () => {
 
         <div className="data">
           <div className="first">
-            <h3>3.74k</h3>
+            <h3>{balance.toFixed(2)}</h3>
             <p>Margin available</p>
           </div>
           <hr />
@@ -25,7 +30,7 @@ const Summary = () => {
               Margins used <span>0</span>{" "}
             </p>
             <p>
-              Opening balance <span>3.74k</span>{" "}
+              Opening balance <span>{balance.toFixed(2)}</span>{" "}
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ function OpenAccount() {
             <div className='row text-center'>
             
             <h1 className='mt-5'>
-                Open a Zerodha Account
+                Open a Stoxly Account
             </h1>
             <p>
                 Modern Platforms and apps , in 0 Ruppees investments, and flat 20 ruppees intraday and F&0 trades.

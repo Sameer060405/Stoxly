@@ -17,9 +17,17 @@ const BuyActionWindow = ({ uid }) => {
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
+    }, {
+      withCredentials: true // Include cookies in request
+    })
+    .then((res) => {
+      console.log("Order placed successfully:", res.data);
+      GeneralContext.closeBuyWindow();
+    })
+    .catch((error) => {
+      console.error("Error placing order:", error);
+      alert("Failed to place order. Please try again.");
     });
-
-    GeneralContext.closeBuyWindow();
   };
 
   const handleCancelClick = () => {

@@ -15,7 +15,7 @@ function Team() {
                     <h5>Founder,CEO</h5>
                 </div>
                 <div className='col-6 p-5'>
-                    <p>Nithin bootstrapped and founded Zerodha in 2010 to overcome the<br/> hurdles he faced during his decade long stint as a trader. Today,<br/> Zerodha has changed the landscape of the Indian broking industry.</p>
+                    <p>Nithin bootstrapped and founded Stoxly in 2010 to overcome the<br/> hurdles he faced during his decade long stint as a trader. Today,<br/> Stoxly has changed the landscape of the Indian broking industry.</p>
                     <p>He is a member of the SEBI Secondary Market Advisory Committee<br/> (SMAC) and the Market Data Advisory Committee (MDAC).</p>
                     <p>Playing basketball is his zen.</p>
                     <p>Connect on <a href ='' style = {{textdecoration:"none"}}>HomePage</a> / <a href ="" style = {{textDecoration:"none"}}>TradingQnA</a> / <a href ="" style={{textdecoration:"none"}}>Twitter</a></p>

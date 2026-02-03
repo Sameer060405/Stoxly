@@ -14,8 +14,8 @@ function CreateTicket() {
                     <a href='' style={{ textDecoration: 'none', lineHeight: "2.5" }}>Glossary</a>
                 </div>
                 <div className='col-4 mt-5 mb-5 p-5'>
-                    <h4 className=''><i class="fa fa-user" aria-hidden="true"></i>
-                        Your Zerodha Account</h4>
+                    <h4 className=''><i className="fa fa-user" aria-hidden="true"></i>
+                        Your Stoxly Account</h4>
                     <a href='' style={{ textDecoration: 'none', lineHeight: "2.5" }}>Your Profile</a><br />
                     <a href='' style={{ textDecoration: 'none', lineHeight: "2.5" }}>Account modification</a><br />
                     <a href='' style={{ textDecoration: 'none', lineHeight: "2.5" }}>Client Master Report (CMR) and Depository Participant (DP)</a><br />

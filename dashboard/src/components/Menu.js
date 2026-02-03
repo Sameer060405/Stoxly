@@ -1,10 +1,12 @@
 import React , {useState} from "react";
 
 import {Link} from "react-router-dom";
+import { useUser } from "./UserContext";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setisProfileDropdownOpen ] = useState(false);
+  const { user, initials, loading } = useUser();
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
@@ -15,6 +17,10 @@ const Menu = () => {
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
+
+  // Get display name - use user's name if available, otherwise fallback
+  const displayName = user?.name || "USERID";
+  const displayInitials = initials || "U";
 
   return (
     <div className="menu-container">
@@ -30,8 +36,8 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <div className="avatar">{displayInitials}</div>
+          <p className="username">{displayName}</p>
         </div>
       </div>
     </div>

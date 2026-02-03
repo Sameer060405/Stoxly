@@ -5,11 +5,18 @@ import axios from "axios";
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3003/allPositions").then((res) => {
+    axios.get("http://localhost:3003/allPositions", {
+      withCredentials: true // Include cookies in request
+    })
+    .then((res) => {
       console.log(res.data);
       setAllPositions(res.data);
     })
-
+    .catch((error) => {
+      console.error("Error fetching positions:", error);
+      // Set empty array on error to prevent crashes
+      setAllPositions([]);
+    });
   }, []);
 
   return (

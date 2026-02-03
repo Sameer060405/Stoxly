@@ -1,0 +1,44 @@
+.zc-auth-page{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 16px;
+  background: linear-gradient(180deg, #f7fbff 0%, #eaf6ff 100%);
+}
+.zc-auth-card{
+  width:440px;
+  max-width:96vw;
+  background: #fff;
+  border-radius:12px;
+  box-shadow: 0 12px 30px rgba(8,30,63,0.12);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  border:1px solid rgba(15,76,129,0.06);
+}
+.zc-brand{display:flex;align-items:center;gap:12px}
+.zc-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0b79d0,#0b4ea3);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px}
+.zc-title{font-weight:700;color:#073b61}
+
+.zc-switch{display:flex;border-radius:8px;background:linear-gradient(90deg,#f6fbff,#f3f9ff);padding:6px;gap:6px}
+.zc-switch button{flex:1;padding:10px;border-radius:8px;border:none;background:transparent;cursor:pointer;color:#0b4ea3;font-weight:600}
+.zc-switch button.active{background:linear-gradient(90deg,#0b79d0,#0b4ea3);color:#fff}
+
+.zc-form{display:flex;flex-direction:column;gap:12px}
+.zc-field{display:flex;flex-direction:column}
+.zc-label{font-size:13px;color:#23475b;margin-bottom:6px}
+.zc-form input{padding:10px 12px;border-radius:8px;border:1px solid #d7eaf7;background:#fbfeff;outline:none;transition:box-shadow .12s ease,border-color .12s ease}
+.zc-form input:focus{box-shadow:0 8px 20px rgba(11,78,163,0.08);border-color:#0b79d0}
+
+.zc-error{color:#b00020;background:rgba(176,0,32,0.05);padding:8px;border-radius:8px;font-size:13px}
+.zc-submit{margin-top:6px;padding:12px;border-radius:10px;border:none;background:linear-gradient(90deg,#0b79d0,#0b4ea3);color:#fff;font-weight:700;cursor:pointer}
+.zc-submit:disabled{opacity:.75;cursor:default}
+
+.zc-footnote{font-size:12px;color:#6b7f8f;text-align:center;padding-top:6px}
+
+@media (max-width:520px){
+  .zc-auth-card{padding:16px}
+  .zc-logo{width:48px;height:48px}
+}

@@ -28,7 +28,7 @@ function Hero() {
                     
                 </div>
                 <h1 className='mt-2 text-center  border-top mt-5'>
-                Open a Zerodha Account
+                Open a Stoxly Account
             </h1>
             <p className='text-center'>
                 Modern Platforms and apps , in 0 Ruppees investments, and flat 20 ruppees intraday and F&0 trades.

@@ -5,7 +5,7 @@ Universe() {
     return ( 
         <div className='container mt-5'>
             <div className='row text-center'>
-                <h2 className='text-center mb-4'>The Zerodha Universe</h2>
+                <h2 className='text-center mb-4'>The Stoxly Universe</h2>
                 <p className='text-center'>Extend your trading and investment experience even further with our partner platforms</p>
                 <div className='col-4 p-3 mt-5'>
                     <img src = 'media/smallcaseLogo.png'/>

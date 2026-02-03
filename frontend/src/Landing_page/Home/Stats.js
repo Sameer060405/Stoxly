@@ -8,12 +8,12 @@ function Stats() {
                     <h1 className='fs-2 mb-5'>Trust With Confidence</h1>
 
                     <h2 className='fs-4'>Customer first-always</h2>
-                    <p className='text-muted'>Thats why 1.3 crore+ customers trust Zerodha.</p>
+                    <p className='text-muted'>Thats why 1.3 crore+ customers trust Stoxly.</p>
 
                     <h2 className='fs-4'>No Spam or gimmicks</h2>
                     <p className='text-muted'>No gimmicks, spam , "gamification",or annoying push notifications.High quality apps that you use at your pace,the way you like</p>
 
-                    <h2 className='fs-4'>The Zerodha Universe</h2>
+                    <h2 className='fs-4'>The Stoxly Universe</h2>
                     <p className='text-muted'>Not just an app,but a whole ecosystem.Our investments in 30+ fintech startups offer you tailored services specified to your needs.</p>
 
                     <h2 className='fs-4'>Do better with Money</h2>

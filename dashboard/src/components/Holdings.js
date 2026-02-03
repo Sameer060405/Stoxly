@@ -9,11 +9,19 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-  axios.get("http://localhost:3003/allHoldings").then((res) => {
-    console.log("Holdings API response:", res.data);
-    setAllHoldings(res.data);
-  });
-}, []);
+    axios.get("http://localhost:3003/allHoldings", {
+      withCredentials: true // Include cookies in request
+    })
+    .then((res) => {
+      console.log("Holdings API response:", res.data);
+      setAllHoldings(res.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching holdings:", error);
+      // Set empty array on error to prevent crashes
+      setAllHoldings([]);
+    });
+  }, []);
 const labels = allHoldings.map((subArray)=> subArray["name"]);
 
 const data = {

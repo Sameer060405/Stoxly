@@ -14,7 +14,7 @@ function Brokerage() {
                         <li>Charged as above on both buy and sell sides when trading equity delivery.</li>
                         <li>Charged only on selling side when trading intraday or on F&O.</li>
 
-                        <li>When trading at Zerodha, STT/CTT can be a lot more than the brokerage we charge. 
+                        <li>When trading on Stoxly, STT/CTT can be a lot more than the brokerage we charge. 
                         Important to keep a tab.</li>
 
                         <li>Transaction/Turnover Charges</li>

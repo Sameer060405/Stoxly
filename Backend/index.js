@@ -3,15 +3,40 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 3003;
 const uri = process.env.MONGO_URL;
 const { HoldingsModel } = require('./model/HoldingsModel');
 const { PositionsModel } = require('./model/PositionsModel');
 const { OrdersModel } = require("./model/OrdersModel");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
-app.use(cors());
+// CORS configuration to allow both frontend and dashboard
+const allowedOrigins = [
+    process.env.FRONTEND_URL || "http://localhost:3000",
+    "http://localhost:3002", // Dashboard default port
+    ...(process.env.DASHBOARD_URL ? [process.env.DASHBOARD_URL] : [])
+];
+app.use(cors({
+    credentials: true,
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            // For development, allow any localhost port
+            if (origin.startsWith('http://localhost:')) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        }
+    }
+}));
+app.use(cookieParser());
 app.use(bodyParser.json());
 //we have a dummy data thats why we are doing this.
 // app.get('/addHoldings', async (req, res) => {
@@ -210,6 +235,28 @@ app.post('/newOrder', async(req, res) => {
 
     res.send("Order saved");
 })
+
+app.get('/allOrders', async (req, res) => {
+    try {
+        const allOrders = await OrdersModel.find({}).sort({ createdAt: -1 });
+        res.json(allOrders);
+    } catch (err) {
+        console.error('Error fetching orders', err);
+        res.status(500).json({ error: 'failed to fetch orders' });
+    }
+});
+
+// Mount authentication routes
+app.use('/api/auth', authRoutes);
+
+// simple health check route
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'ok',
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+    });
+});
 app.listen(PORT, () => {
     console.log("App started");
     mongoose.connect(uri);

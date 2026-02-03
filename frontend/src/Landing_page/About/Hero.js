@@ -10,7 +10,7 @@ function Hero() {
             </div>
             <div className='row p-5 mt-5 border-top text-muted fs-6'>
                 <div className='col-6 p-5'>
-                    <p>We kick-started operations on the 15th of August, 2010<br/> with the goal of breaking all barriers that traders and<br/> investors face in India in terms of cost, support, and<br/> technology. We named the company Zerodha, a<br/> combination of Zero and "Rodha", the Sanskrit word for<br/> barrier.</p>
+                    <p>We kick-started operations on the 15th of August, 2010<br/> with the goal of breaking all barriers that traders and<br/> investors face in India in terms of cost, support, and<br/> technology. We named the company Stoxly, a<br/> combination of Zero and "Rodha", the Sanskrit word for<br/> barrier.</p>
                     <p>Today, our disruptive pricing models and in-house<br/> technology have made us the biggest stock broker in<br/> India.</p>
                     <p>Over 1.6+ crore clients place billions of orders every year<br/> through our powerful ecosystem of investment<br/> platforms, contributing over 15% of all Indian retail<br/> trading volumes.</p>
                 </div>

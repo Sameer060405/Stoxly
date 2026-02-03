@@ -1,0 +1,57 @@
+.funds{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;padding:14px;border-radius:12px;background:linear-gradient(90deg,#f7fbff,#eef7ff);box-shadow:0 6px 18px rgba(12,36,86,0.06)}
+.funds-left{display:flex;flex-direction:column}
+.funds-title{font-size:18px;font-weight:700}
+.funds-sub{font-size:13px;color:#556;opacity:0.9}
+.funds-actions{display:flex;gap:8px}
+.btn{padding:8px 14px;border-radius:8px;border:1px solid #e6eaf0;background:#fff;cursor:pointer;font-weight:600}
+.btn .icon{margin-right:8px}
+.btn-gradient{background:linear-gradient(90deg,#00a86b,#00c07a);color:#fff;border:none;box-shadow:0 6px 18px rgba(0,200,122,0.12)}
+.btn-outline{background:#fff;border:1px solid #dbe9ff;color:#0b62d8}
+.btn-blue{background:#0073e6;color:#fff;border:none}
+.row{display:flex;gap:16px}
+.col{flex:1}
+.table{background:#fff;padding:14px;border-radius:12px;border:1px solid #f0f3f7}
+.data{display:flex;justify-content:space-between;padding:8px 0}
+.imp{font-weight:800}
+.colored{color:#00a86b}
+
+/* modal cards */
+.zc-modal{position:fixed;inset:0;background:rgba(6,10,20,0.45);display:flex;align-items:center;justify-content:center;z-index:2000}
+.zc-card{background:#fff;border-radius:12px;min-width:360px;max-width:560px;box-shadow:0 18px 50px rgba(8,20,48,0.18);overflow:hidden}
+.zc-card-header{display:flex;gap:14px;padding:18px 20px;background:linear-gradient(90deg,#fbfdff,#f6fbff)}
+.zc-icon{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#fff,#f3fff4);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.zc-card-header h3{margin:0;font-size:18px}
+.zc-sub{font-size:13px;color:#566;opacity:0.9}
+.zc-card-body{padding:18px}
+.zc-label{display:block;margin:10px 0 6px;color:#405; font-weight:600}
+.zc-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf6}
+.zc-input.small{width:60%;}
+.zc-methods{display:flex;gap:8px;margin-top:6px}
+.zc-method{padding:8px 12px;border-radius:999px;border:1px solid #eef6ff;background:#fff;cursor:pointer}
+.zc-method.active{background:linear-gradient(90deg,#dff8ee,#d9f5ff);border-color:transparent}
+.zc-upi{display:flex;gap:12px;align-items:center;margin-top:12px}
+.zc-qr{width:86px;height:86px;border-radius:8px;background:linear-gradient(180deg,#fff,#f6f9ff);display:flex;align-items:center;justify-content:center;border:1px dashed #d9e6ff;color:#6a7;font-weight:700}
+.zc-upi-right{flex:1}
+.zc-upi-tip{font-size:13px;color:#445;margin-bottom:6px}
+.zc-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.zc-note{margin-top:12px;padding:8px;border-radius:8px}
+.zc-note.error{background:#fff5f6;border:1px solid #ffd2d6;color:#8a1f2d}
+
+/* close button */
+.zc-close{position:absolute;right:12px;top:12px;background:transparent;border:none;font-size:22px;cursor:pointer;color:#223}
+
+/* button tweaks: ensure visible on modal */
+.zc-actions .btn{background:#f6f9ff;color:#0b3aa6;border:1px solid #dbe9ff;padding:8px 12px;border-radius:8px}
+.zc-actions .btn.btn-gradient{background:linear-gradient(90deg,#00a86b,#00c07a);color:#fff;border:none}
+.zc-actions .btn.btn-outline{background:#fff;border:1px solid #dbe9ff;color:#0b3aa6}
+.btn-muted{background:#fff;border:1px solid #eef3fb;color:#223}
+
+/* success */
+.zc-success{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#f0fff6,#f3fbff);padding:18px;border-radius:12px;box-shadow:0 14px 36px rgba(0,0,0,0.14)}
+.zc-success .check{background:#00c07a;color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 8px 20px rgba(0,192,122,0.18)}
+.zc-success .txt{font-weight:700}
+
+@media (max-width:600px){
+	.zc-card{width:92%;min-width:auto}
+	.funds{flex-direction:column;align-items:flex-start}
+}
