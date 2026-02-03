@@ -13,6 +13,10 @@ const { OrdersModel } = require("./model/OrdersModel");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
+app.get("/test", (req, res) => {
+  res.json({ status: "Backend working ✅" });
+});
+
 // CORS configuration to allow both frontend and dashboard
 const allowedOrigins = [
     process.env.FRONTEND_URL || "http://localhost:3000",
