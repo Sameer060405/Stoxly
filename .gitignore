@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+Backend/.env
+
 
 # production
 /build
